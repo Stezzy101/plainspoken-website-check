@@ -69,14 +69,14 @@ body{
 /* PAGE */
 
 main{
-  max-width:1120px;
+  max-width:1040px;
   margin:0 auto;
   padding:0 24px 90px;
 }
 
 .hero{
-  padding:110px 0 90px;
-  max-width:760px;
+  padding:92px 0 72px;
+  max-width:720px;
 }
 
 .badge,
@@ -112,7 +112,7 @@ h1 em{
 
 .sub{
   max-width:650px;
-  margin:28px 0;
+  margin:24px 0;
   font-size:16px;
   line-height:1.55;
   color:var(--muted);
@@ -157,7 +157,7 @@ button:hover{
 }
 
 .fine{
-  margin-top:11px;
+  margin-top:9px;
   color:var(--muted);
   font-size:10px;
 }
