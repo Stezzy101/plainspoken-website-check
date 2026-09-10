@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plainspoken Website Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="badge">PLAIN SPOKEN</div>
+
+      <h1>
+        See what your website
+        <em>could</em> be.
+      </h1>
+
+      <p class="sub">
+        Paste a public website URL. Get a free clarity check,
+        practical fixes and a cleaner homepage direction.
+      </p>
+
+      <form id="auditForm" class="url-form">
+        <input
+          id="urlInput"
+          type="text"
+          placeholder="https://yourwebsite.com"
+          required
+        />
+
+        <button type="submit">
+          Review website
+        </button>
+      </form>
+
+      <p class="fine">
+        Free prototype — no API key and no account required.
+      </p>
+    </section>
+
+    <section id="loading" class="loading hidden">
+      <div class="spinner"></div>
+
+      <p>
+        Checking clarity, calls to action and trust signals…
+      </p>
+    </section>
+
+    <section id="results" class="results hidden">
+
+      <div class="results-top">
+        <div>
+          <p class="eyebrow">
+            WEBSITE REVIEW
+          </p>
+
+          <h2 id="siteName">
+            Your website
+          </h2>
+        </div>
+
+        <div class="score-wrap">
+          <div class="score-copy">
+            <span class="score-label">
+              Clarity score
+            </span>
+
+            <span id="scoreRating" class="rating">
+              Strong
+            </span>
+          </div>
+
+          <div>
+            <strong id="score">
+              0
+            </strong>
+
+            <span>
+              /100
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <article class="summary-card">
+        <p class="card-kicker">
+          QUICK READ
+        </p>
+
+        <h3 id="summaryText">
+          Your homepage has a solid foundation.
+        </h3>
+      </article>
+
+      <article class="top-fixes-card">
+        <div>
+          <p class="card-kicker">
+            PRIORITY
+          </p>
+
+          <h3>
+            The first 3 things to fix
+          </h3>
+        </div>
+
+        <div id="topFixes" class="top-fixes">
+        </div>
+      </article>
+
+      <div class="grid two">
+
+        <article class="card">
+          <p class="card-kicker">
+            WHAT'S WORKING
+          </p>
+
+          <h3>
+            Strengths
+          </h3>
+
+          <ul id="strengthsList"></ul>
+        </article>
+
+        <article class="card issue-card">
+          <p class="card-kicker">
+            WHAT TO FIX
+          </p>
+
+          <h3>
+            Missed opportunities
+          </h3>
+
+          <ul id="issuesList"></ul>
+        </article>
+
+      </div>
+
+      <article class="card concept-card">
+        <p class="card-kicker">
+          PLAIN SPOKEN DIRECTION
+        </p>
+
+        <h3>
+          A clearer homepage approach
+        </h3>
+
+        <div class="concept-block">
+          <span>
+            Main heading
+          </span>
+
+          <p id="headlineAdvice"></p>
+        </div>
+
+        <div class="concept-block">
+          <span>
+            Primary action
+          </span>
+
+          <p id="ctaAdvice"></p>
+        </div>
+
+        <div class="concept-block">
+          <span>
+            Biggest opportunity
+          </span>
+
+          <p id="biggestOpportunity"></p>
+        </div>
+      </article>
+
+      <article class="card structure-card">
+
+        <p class="card-kicker">
+          RECOMMENDED HOMEPAGE
+        </p>
+
+        <h3>
+          Keep the journey simple.
+        </h3>
+
+        <div id="structure" class="structure"></div>
+
+      </article>
+
+      <article class="concept-builder">
+
+        <p class="card-kicker">
+          NEXT STEP
+        </p>
+
+        <h3>
+          Want to see what the homepage could become?
+        </h3>
+
+        <p>
+          Plainspoken can turn this audit into a simple homepage concept with a clearer message, stronger structure and one obvious action.
+        </p>
+
+        <button
+          id="conceptBtn"
+          class="concept-button"
+        >
+          Create homepage concept
+        </button>
+
+      </article>
+
+      <article
+        id="homepageConcept"
+        class="homepage-concept hidden"
+      >
+        <div class="concept-preview-heading">
+          <div>
+            <p class="card-kicker">
+              HOMEPAGE CONCEPT
+            </p>
+
+            <h3 id="conceptBusinessName">
+              Your business
+            </h3>
+          </div>
+
+          <div class="preview-controls">
+            <button
+              id="desktopPreviewBtn"
+              class="preview-toggle active"
+              type="button"
+            >
+              Desktop
+            </button>
+
+            <button
+              id="mobilePreviewBtn"
+              class="preview-toggle"
+              type="button"
+            >
+              Mobile
+            </button>
+          </div>
+        </div>
+
+        <div class="site-preview">
+
+          <div class="preview-nav">
+            <div
+              id="previewBrand"
+              class="preview-brand"
+            >
+              YOUR BUSINESS
+            </div>
+
+            <div class="preview-links">
+              <span>Services</span>
+              <span>About</span>
+              <span>Contact</span>
+            </div>
+          </div>
+
+          <section class="preview-hero">
+            <div class="preview-hero-copy">
+
+              <p class="preview-eyebrow">
+                LOCAL BUSINESS
+              </p>
+
+              <h2 id="previewHeadline">
+                A clearer homepage starts here.
+              </h2>
+
+              <p id="previewSubhead">
+                A simple introduction to what this business offers.
+              </p>
+
+              <button
+                id="previewCTA"
+                class="preview-cta"
+              >
+                Get started
+              </button>
+
+            </div>
+
+            <div class="preview-image-placeholder">
+              <span>IMAGE / BRAND VISUAL</span>
+            </div>
+          </section>
+
+          <section class="preview-services">
+
+            <p class="preview-section-label">
+              SERVICES
+            </p>
+
+            <div
+              id="previewServices"
+              class="preview-service-grid"
+            ></div>
+
+          </section>
+
+          <section class="preview-proof">
+            <div>
+              <strong>4.9</strong>
+              <span>CLIENT RATING</span>
+            </div>
+
+            <div>
+              <strong>LOCAL</strong>
+              <span>TRUSTED SERVICE</span>
+            </div>
+
+            <div>
+              <strong>EASY</strong>
+              <span>CLEAR NEXT STEP</span>
+            </div>
+          </section>
+
+          <section class="preview-about">
+
+            <p class="preview-section-label">
+              WHY CHOOSE US
+            </p>
+
+            <h3>
+              Clear service. Simple experience.
+            </h3>
+
+            <p id="previewAbout">
+              Explain what makes this business different in a few specific,
+              human sentences.
+            </p>
+
+          </section>
+
+          <section class="preview-final-cta">
+
+            <p class="preview-section-label">
+              READY WHEN YOU ARE
+            </p>
+
+            <h3 id="previewFinalHeading">
+              Make the next step obvious.
+            </h3>
+
+            <button
+              id="previewFinalCTA"
+              class="preview-cta light"
+            >
+              Get started
+            </button>
+
+          </section>
+
+        </div>
+
+      </article>
+
+      <div class="actions">
+
+        <button
+          id="copyBtn"
+          class="secondary"
+        >
+          Copy full audit
+        </button>
+
+        <button
+          id="downloadBtn"
+          class="ghost"
+        >
+          Download audit
+        </button>
+
+        <button
+          id="resetBtn"
+          class="ghost"
+        >
+          Check another website
+        </button>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    Built by Plainspoken — clear websites for small businesses.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
